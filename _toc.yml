@@ -1,9 +1,16 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
-root: intro
+root: intro  # 首頁改叫 intro.md
+
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+  - file: basics/what_is_hls
+    sections:
+      - file: basics/hls_vs_rtl
+      - file: basics/toolchain_setup
+  - file: pragmas/pragmas_overview
+    sections:
+      - file: pragmas/loop_unroll
+      - file: pragmas/pipeline
+      - file: pragmas/array_partition
+  - file: examples/bresenham_led
+  - file: examples/fft_accelerator
+  - file: references

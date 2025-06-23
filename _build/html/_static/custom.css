@@ -1,0 +1,11 @@
+
+/* 把程式碼區塊邊框顏色換成低彩度灰 */
+div.highlight, pre {
+  border-radius: 0.6rem;
+  border: 1px solid #d0d0d0;
+}
+
+/* callout 方塊 Title 加粗 */
+.admonition-title {
+  font-weight: 600;
+}

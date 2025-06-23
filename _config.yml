@@ -1,37 +1,43 @@
-#######################################################################################
-# A default configuration that will be loaded for all jupyter books
-# See the documentation for help and more options: 
-# https://jupyterbook.org/customize/config.html
+# ─── 書本基本資料 ───────────────────────────
+title      : "高階合成入門 | High-Level Synthesis Tutorial"
+author     : "weiber"
+logo       : _static/logo.png
+copyright  : "© 2025 Wei-Po"
 
-#######################################################################################
-# Book settings
-title                       : High Level Synthesis Tutorial  # The title of the book. Will be placed in the left navbar.
-author                      : weiber  # The author of the book
-copyright                   : "2025"  # Copyright year to be placed in the footer
-logo                        : logo.png  # A path to the book logo
-
-# Force re-execution of notebooks on each build.
-# See https://jupyterbook.org/content/execute.html
-execute:
-  execute_notebooks: force
-
-# Define the name of the latex output file for PDF builds
-latex:
-  latex_documents:
-    targetname: book.tex
-
-# Add a bibtex file so that we can create citations
-bibtex_bibfiles:
-  - references.bib
-
-# Information about where the book exists on the web
+# ─── GitHub 連結 ───────────────────────────
 repository:
-  url: https://github.com/weiber2002/High Level Synthesis Tutorial  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: main  # Which branch of the repository should be used when creating links (optional)
+  url    : https://github.com/weiber2002/HLS_tutorial
+  branch : main
 
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+# ─── HTML 介面 ─────────────────────────────
 html:
-  use_issues_button: true
-  use_repository_button: true
+  favicon                : _static/favicon.ico     # 沒有可刪
+  use_issues_button      : true
+  use_repository_button  : true
+  last_updated_fmt       : "%Y-%m-%d %H:%M"
+  css:
+    - _static/custom.css                       # 自訂樣式
+
+  # ── 分析工具 (新版路徑) ──────────────────
+  analytics:
+    google_analytics_id : ""                   # 需要再填 UA-XXXX 或 GA4
+
+  # ── Sphinx-book-theme 選項 ───────────────
+  extra_footer: |
+    <div style="text-align:center;font-size:0.9em">
+      以 <a href="https://jupyterbook.org" target="_blank">Jupyter Book</a> 建立 ·
+      最後更新 {{ last_updated }}
+    </div>
+
+  theme:
+    name   : sphinx_book_theme
+    options:
+      home_page_in_navbar  : true
+      repository_url       : https://github.com/weiber2002/HLS_tutorial
+      repository_branch    : main
+      path_to_docs         : ""                 # 放根目錄就留空
+      use_fullscreen_button: false
+      navigation_with_keys : true
+      show_navbar_depth    : 2
+      extra_navbar: |
+        <a href="https://github.com/weiber2002/HLS_tutorial/issues" target="_blank">問題回報</a>
